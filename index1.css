@@ -1,0 +1,196 @@
+html {
+    scroll-behavior: smooth;
+}
+/*1.CSS Variables - Global Settings */
+ :root {
+    --primary-color:#007bff;
+    --bg-dark: #121212;
+    --bg-card: #1f1f1f;
+    --text-white:#ffffff;
+    --text-grey:#a0a0a0; /*Pragraphs ke liye thora halka rang */
+    --font-main:'Poppins',sans-serif
+} 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/*2.Spacing (Breathable UI )*/
+section {
+    padding: 100px 10%; /*Upar-neeche 80px kijagah, side mein 10% ki gap */
+}
+
+/*3.typography (visusal heirachy)*/
+h1 { font-size:3.5rem; font-weight:700;margin-bottom:15px;}
+h2 { font-size:2.5rem; margin-bottom:40px;text-align:center;}
+p {color:var(--text-grey);font-size:1.1rem;}
+
+
+/*4.Navbar flex box example*/
+.navbar {
+    display: flex;
+    justify-content: space-between; /*Logo left,Links right */
+    align-items: center;
+    padding: 20px 10%;
+    background: #1a1a1a;
+    position:sticky; /*Scroll karte waqt top rahega */
+    top:0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style:none;
+}
+
+.nav-links li { margin-left: 25px;}
+.nav-links a { color:white;text-decoration: none;transition: 0.3s;}
+.nav-links a:hover { color:var(--primary-color);}
+
+/*5.Skills Section (Flexbox Wrap )*/
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap:wrap;/*Agar screen choti ho to niche line mein aa jayein*/
+}
+
+.skill-tag {
+    background: var(--bg-card);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/*6.Projects(css grid ex.*/
+.project-container {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 15px;
+    border:1px solid #333;
+    transition: all 0.4s ease; /* Animation smooth karne ke liye */
+}
+
+/* Hover effect (interactivity)*/
+.project-card:hover {
+    transform: translateY(-10px); /* card upar uthega*/
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,123,255,0.1);
+}
+
+.project-card h3 { margin-bottom: 10px;}
+.project-card a { color: var(--primary-color);text-decoration: none;margin-top: 15px;display: inline-block;}
+
+/*7. Hero Button*/
+.btn {
+    display: inline-block;  /*Link ko button ki tarah behave karane ke liye */
+    text-decoration: none ; /* Line ke neeche ki underline hatane ke liye */
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color:white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{background-color:#0056b3; transform: scale(1.05);}
+
+
+ .nav-links a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-weight: 400;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;  /* ye animation hai*/
+}
+
+.nav-links a:hover::after{
+    width: 100%; /*Mouse le jaane par line puri dikhegi*/
+}
+
+
+
+.hero {
+    height:80vh;
+    display:flex;
+    justify-content: center;/* Horizontally center */
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 span {
+    color:var(--primary-color);
+}
+
+.hero p span {
+    color:var(--primary-color);
+} 
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Mobile par upar-neeche ho jayega*/
+}
+
+.contact-form{
+    flex: 1; /* jitni jagah mile le lo*/
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    background: var(--bg-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+}
+
+.contact-form input:focus 
+.contact-form textarea:focus {
+    border-color: var(--primary-color);/* Click karne par blue border*/
+    outline: none;
+}
+
+.contact-info{
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+
