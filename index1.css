@@ -1,6 +1,32 @@
 html {
     scroll-behavior: smooth;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap:10px; /* Image aur naam ke beech thodi jagah*/
+}
+
+.nav-profile-img {
+    width: 40px; /*Chota size*/
+    height: 40px;
+    border-radius: 50%; /* isse image circular ho jayegi*/
+    object-fit: cover;/* image kheechegi nahi, barabar crop hogi*/
+    border: 2px solid var(--primary-color); /* Blue border for professional look*/
+}
+
+.nav-img-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-profile-img:hover {
+    transform: scale(1.1); /* Photo thodi badi hogi*/
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
 /*1.CSS Variables - Global Settings */
  :root {
     --primary-color:#007bff;
@@ -192,6 +218,7 @@ p {color:var(--text-grey);font-size:1.1rem;}
     min-width: 300px;
     text-align: left;
 }
+
 
 
 
