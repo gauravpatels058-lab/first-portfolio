@@ -181,7 +181,7 @@ p {color:var(--text-grey);font-size:1.1rem;}
     font-family: inherit;
 }
 
-.contact-form input:focus 
+.contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary-color);/* Click karne par blue border*/
     outline: none;
@@ -192,5 +192,6 @@ p {color:var(--text-grey);font-size:1.1rem;}
     min-width: 300px;
     text-align: left;
 }
+
 
 
