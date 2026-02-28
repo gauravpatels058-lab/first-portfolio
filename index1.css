@@ -2,6 +2,26 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Mobile Devices (max-width: 768px) */
+@media (max-width:786px){
+    .navbar {
+        padding: 15px 5%; /* Side ki padding kam kar di*/
+        flex-direction: column; /* Logo upar, links niche*/
+        gap: 15px;
+    }
+
+    .nav-links{
+        gap: 10px;/* Links ke beech ki gap kam ki*/
+        padding: 0;
+        justify-content: center; /* Sab kuch center mein dikhega*/
+        width: 100%;
+    }
+
+    .nav-links li{
+        margin-left: 0; /*Purana margin hata diya*/
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -218,6 +238,7 @@ p {color:var(--text-grey);font-size:1.1rem;}
     min-width: 300px;
     text-align: left;
 }
+
 
 
 
