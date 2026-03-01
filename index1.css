@@ -2,19 +2,19 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Mobile Devices (max-width: 768px) */
-@media (max-width:786px){
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width:600px){
     .navbar {
-        padding: 15px 5%; /* Side ki padding kam kar di*/
-        flex-direction: column; /* Logo upar, links niche*/
-        gap: 15px;
+        flex-direction: row; /* Taaki image aur links ek hi line mein rehein*/
+        justify-content: space-between;
+        padding: 10px 5%; /* Side ki padding kam kar di*/
+        gap:10px; /*Profile pic aur Pehle link ke beech ki duri*/
     }
 
     .nav-links{
         gap: 10px;/* Links ke beech ki gap kam ki*/
-        padding: 0;
-        justify-content: center; /* Sab kuch center mein dikhega*/
-        width: 100%;
+        font-size: 0.85rem; /* MObile par fonts thore chote acche lagte hai*/
     }
 
     .nav-links li{
@@ -238,6 +238,7 @@ p {color:var(--text-grey);font-size:1.1rem;}
     min-width: 300px;
     text-align: left;
 }
+
 
 
 
