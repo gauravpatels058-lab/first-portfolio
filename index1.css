@@ -142,6 +142,22 @@ p {color:var(--text-grey);font-size:1.1rem;}
 .project-card h3 { margin-bottom: 10px;}
 .project-card a { color: var(--primary-color);text-decoration: none;margin-top: 15px;display: inline-block;}
 
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    transform: translateX(5px); /* Hover par thoda right move hoga */
+}
+
 /*7. Hero Button*/
 .btn {
     display: inline-block;  /*Link ko button ki tarah behave karane ke liye */
@@ -263,6 +279,7 @@ p {color:var(--text-grey);font-size:1.1rem;}
 .social-icons i {
     font-size: 1.5rem; /* Icon thoda bada dikhega */
 }
+
 
 
 
