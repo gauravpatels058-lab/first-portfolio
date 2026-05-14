@@ -163,13 +163,14 @@ p { color: var(--text-grey); font-size: 1.2rem; }
     border-color: var(--primary-color);
 }
 
-/* ===================== 6. SKILLS & CONTACT ===================== */
+/* ===================== 6. SKILLS & CONTACT (IMPROVED) ===================== */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 40px 0;
+    margin: 40px auto; /* Auto center ke liye */
     justify-content: center;
+    max-width: 900px; /* Isse tags line se bahar nahi jayenge */
 }
 
 .skill-tag {
@@ -177,12 +178,18 @@ p { color: var(--text-grey); font-size: 1.2rem; }
     padding: 10px 25px;
     border-radius: 50px;
     border: 1px solid #333;
+    transition: 0.3s; /* Hover effect ke liye add kiya */
+}
+
+.skill-tag:hover {
+    border-color: var(--primary-color);
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
+    align-items: start; /* Content ko top se align rakhega */
 }
 
 .contact-form {
@@ -197,6 +204,18 @@ p { color: var(--text-grey); font-size: 1.2rem; }
     border: 1px solid #333;
     color: white;
     border-radius: 8px;
+    width: 100%; /* Ensure full width */
+}
+
+/* Yahan maine LinkedIn/GitHub ka blue color fix karne ke liye ye add kiya hai */
+.contact-info a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
 }
 
 /* ===================== 7. ANIMATIONS & MOBILE ===================== */
@@ -236,5 +255,7 @@ p { color: var(--text-grey); font-size: 1.2rem; }
         pointer-events: auto;
     }
 
-    .contact-container { grid-template-columns: 1fr; }
+    .contact-container { 
+        grid-template-columns: 1fr; /* Mobile par stack ho jayega */
+    }
 }
