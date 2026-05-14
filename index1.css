@@ -259,3 +259,32 @@ p { color: var(--text-grey); font-size: 1.2rem; }
         grid-template-columns: 1fr; /* Mobile par stack ho jayega */
     }
 }
+
+/* 1. Placeholder visibility fix: Isse "Your Name" readable ho jayega */
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: #a0a0a0 !important;
+    opacity: 1;
+}
+
+/* 2. LinkedIn/GitHub links ke beech space badhao */
+.social-icons {
+    display: flex;
+    gap: 25px; /* Inke beech gap badhaya */
+    margin-top: 15px;
+}
+
+/* 3. Icons aur Text ko ek line mein align karo */
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* 4. Textarea ko thoda better banaya */
+textarea {
+    resize: vertical; /* Sirf upar-niche bada ho sakega */
+    min-height: 140px;
+}
