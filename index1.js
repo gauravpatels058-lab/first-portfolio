@@ -1,41 +1,41 @@
-/// Elements select
+// 1. Elements
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const navbar = document.querySelector(".navbar");
 
-// Toggle menu
+// 2. Mobile Menu Toggle
 if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        const isActive = navLinks.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", isActive);
     });
 }
 
-const links = document.querySelectorAll("#navLinks a");
-
-links.forEach(link => {
-    link.addEventListener("click", () => {
+// 3. Close menu on link click (Event Delegation)
+navLinks.addEventListener("click", (e) => {
+    if (e.target.tagName === 'A') {
         navLinks.classList.remove("active");
-    });
-});
-
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
     }
 });
 
-const reveals = document.querySelectorAll(".reveal");
-
+// 4. Navbar scroll effect
 window.addEventListener("scroll", () => {
-    reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+}, { passive: true });
 
-        if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
+// 5. Intersection Observer for Reveal Animation
+const revealOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            revealObserver.unobserve(entry.target); // Animates only once
         }
     });
-});
+}, revealOptions);
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
